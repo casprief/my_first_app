@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,14 +16,11 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.deepOrange,
       ),
-      body: Center(
-        child: IconButton(
-          onPressed: (){
-            print('sending email');
-          },
-          icon: Icon(Icons.alternate_email),
-          color: Colors.amberAccent,
-        )
+      body: Container(
+        padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 10.0),
+        margin: EdgeInsets.all(30.0),
+        color: Colors.green[50],
+        child: Text('hello'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
