@@ -11,47 +11,82 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text('My first app'),
         centerTitle: true,
         backgroundColor: Colors.deepOrange,
+        elevation: 0.0,
       ),
-      body: Row(
-        children: [
-          Expanded(
-            child: Image.asset('assets/mountain.jpg'),
-            flex: 3,
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.amber,
-              child: Text('Widget 1'),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage(
+                  'assets/capoeira-thumb.jpg',
+                ),
+                radius: 40.0,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.blue,
-              child: Text('Widget 2'),
+            Divider(
+              height: 90.0,
+              color: Colors.blueGrey[400],
             ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.redAccent,
-              child: Text('Widget 3'),
+            Text('NAME',
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              ),
             ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text('click'),
-        backgroundColor: Colors.red[600],
+            SizedBox(height: 10.0,),
+            Text('Lidka',
+              style: TextStyle(
+                color: Colors.amber,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0,),
+            Text('LEVEL',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0,),
+            Text('Professional',
+              style: TextStyle(
+                color: Colors.amber,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0,),
+            Row(
+              children: [
+                Icon(
+                  Icons.email,
+                  color: Colors.white,
+                ),
+                SizedBox(width: 10.0,),
+                Text(
+                  'lidka@models.com',
+                  style: TextStyle(
+                    color: Colors.amber,
+                    letterSpacing: 1.0,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
