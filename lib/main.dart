@@ -137,6 +137,34 @@ class _QuoteListState extends State<QuoteList> {
     Quote(text: 'Chamuyero!', author: 'Lidka')
   ];
 
+  Widget quoteTemp (quote){
+    return Card(
+      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+      color: Colors.blueGrey,
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(quote.text,
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.white70,
+              ),
+            ),
+            SizedBox(height: 2.0),
+            Text(quote.author,
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.white60,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,13 +176,7 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         children:
-          quotes.map((quote) => Text(
-              '${quote.text} - ${quote.author}',
-              style: TextStyle(
-                color: Colors.white60,
-                letterSpacing: 2.0,
-              ),
-          )).toList(),
+          quotes.map((quote) => quoteTemp(quote)).toList(),
       ),
     );
   }
