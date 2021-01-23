@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Home(),
+    //home: Home(),
+    home: QuoteList(),
   ));
 }
 
@@ -118,6 +119,34 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class QuoteList extends StatefulWidget {
+  @override
+  _QuoteListState createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+  List<String> quotes = [
+    'Soy la reina del Mate',
+    'Che, queres Mate?',
+    'Chamuyero!'
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.indigo,
+      appBar: AppBar(
+        title: Text("Awesome Quotes"),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+      ),
+      body: Column(
+        children:
+          quotes.map((quote) => Text(quote)).toList(),
       ),
     );
   }
