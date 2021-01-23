@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: Text('My first app'),
+        title: Text('Felidka'),
         centerTitle: true,
         backgroundColor: Colors.deepOrange,
         elevation: 0.0,
