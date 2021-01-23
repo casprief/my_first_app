@@ -133,7 +133,8 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
-    Quote(text: 'Soy la reina del Mate', author: 'Lidka'),
+    Quote(text: 'Soy la Diosa del Mate', author: 'Lidka'),
+    Quote(text: 'Soy la reina del cartel', author: 'Lidka'),
     Quote(text: 'Che, queres Mate?', author: 'Lidka'),
     Quote(text: 'Chamuyero!', author: 'Lidka')
   ];
