@@ -7,7 +7,13 @@ void main() {
   ));
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int tasks = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +24,17 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.deepOrange,
         elevation: 0.0,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            tasks++;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.deepOrange,
+      ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 0.0),
+        padding: EdgeInsets.fromLTRB(20.0, 30.0, 10.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -59,6 +74,22 @@ class Home extends StatelessWidget {
             ),
             SizedBox(height: 10.0,),
             Text('Professional',
+              style: TextStyle(
+                color: Colors.amber,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0,),
+            Text('ACHIEVED TASKS',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0,),
+            Text('$tasks',
               style: TextStyle(
                 color: Colors.amber,
                 letterSpacing: 2.0,
