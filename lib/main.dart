@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -130,11 +131,12 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
-  List<String> quotes = [
-    'Soy la reina del Mate',
-    'Che, queres Mate?',
-    'Chamuyero!'
+  List<Quote> quotes = [
+    Quote(text: 'Soy la reina del Mate', author: 'Lidka'),
+    Quote(text: 'Che, queres Mate?', author: 'Lidka'),
+    Quote(text: 'Chamuyero!', author: 'Lidka')
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +148,13 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         children:
-          quotes.map((quote) => Text(quote)).toList(),
+          quotes.map((quote) => Text(
+              '${quote.text} - ${quote.author}',
+              style: TextStyle(
+                color: Colors.white60,
+                letterSpacing: 2.0,
+              ),
+          )).toList(),
       ),
     );
   }
